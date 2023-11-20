@@ -40,7 +40,7 @@ absolute_errors = [[] for _ in range(len(appliance))]
 signal_aggregate_error = [[] for _ in range(len(appliance))]
 f1_values = [[] for _ in range(len(appliance))]
 mse = nn.MSELoss()
-# 模型初始化
+# Model initialization
 with torch.no_grad():
     tqdm_dataloader = tqdm(test_loader)
     for batch_idx, batch in enumerate(tqdm_dataloader):
