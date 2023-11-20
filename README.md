@@ -61,5 +61,3 @@ Improvement of multi-appliance model compared with single appliance model.
 <img title="" src="file:///C:/Users/Administrator/Desktop/refittrain/plots/f1_plot.jpg" alt="f1_plot" style="zoom:50%;" data-align="center">
 
 <img title="" src="file:///C:/Users/Administrator/Desktop/refittrain/plots/mae_plot.jpg" alt="mae_plot" style="zoom:50%;" data-align="center">
-
-
