@@ -52,12 +52,14 @@ python .\test\test_model_one_appliance.py --test_dataset_path 'dataset_managemen
 
 ## Performance
 
-![92925563-0533-4317-a76c-ee20bb9e6c08](file:///C:/Users/Administrator/Pictures/Typedown/92925563-0533-4317-a76c-ee20bb9e6c08.png)
+![](test/multi_appliance.png)
 
-![2b4a4256-80fa-4f4e-92fd-c28961acb550](file:///C:/Users/Administrator/Pictures/Typedown/2b4a4256-80fa-4f4e-92fd-c28961acb550.png)
+![](test/single_appliance.png)
 
 Improvement of multi-appliance model compared with single appliance model.
 
-<img title="" src="file:///C:/Users/Administrator/Desktop/refittrain/plots/f1_plot.jpg" alt="f1_plot" style="zoom:50%;" data-align="center">
+![](plots/mae_plot.jpg)
 
-<img title="" src="file:///C:/Users/Administrator/Desktop/refittrain/plots/mae_plot.jpg" alt="mae_plot" style="zoom:50%;" data-align="center">
+![](plots/f1_plot.jpg)
+
+
