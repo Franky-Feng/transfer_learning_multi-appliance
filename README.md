@@ -58,8 +58,8 @@ python .\test\test_model_one_appliance.py --test_dataset_path 'dataset_managemen
 
 Improvement of multi-appliance model compared with single appliance model.
 
-![](plots/mae_plot.jpg)
+![](plots/mae_plot1.jpg)
 
-![](plots/f1_plot.jpg)
+![](plots/f1_plot1.jpg)
 
 
