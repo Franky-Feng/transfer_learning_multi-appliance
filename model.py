@@ -49,14 +49,11 @@ class MultiHeadedAttention(nn.Module):
     def __init__(self, h, d_model, dropout=0.1):
         super().__init__()
         assert d_model % h == 0
-
         self.d_k = d_model // h
         self.h = h
-
         self.linear_layers = nn.ModuleList([nn.Linear(d_model, d_model) for _ in range(3)])
         self.output_linear = nn.Linear(d_model, d_model)
         self.attention = Attention()
-
         self.dropout = nn.Dropout(p=dropout)
 
     def forward(self, query, key, value, mask=None):
@@ -118,24 +115,19 @@ class BERT4NILM(nn.Module):
         self.original_len = args.window_size
         self.latent_len = int(self.original_len / 2)
         self.dropout_rate = args.drop_out
-
         self.hidden = 256
         self.heads = 2
         self.n_layers = 2
         self.output_size = args.output_size
-
         self.conv = nn.Conv1d(in_channels=1, out_channels=self.hidden, kernel_size=5, stride=1, padding=2,
                               padding_mode='replicate')
         self.pool = nn.LPPool1d(norm_type=2, kernel_size=2, stride=2)
-
         self.position = PositionalEmbedding(max_len=self.latent_len, d_model=self.hidden)  # 240 256
         self.layer_norm = LayerNorm(self.hidden)
         self.dropout = nn.Dropout(p=self.dropout_rate)
-
         self.transformer_blocks = nn.ModuleList(
             [TransformerBlock(self.hidden, self.heads, self.hidden * 4, self.dropout_rate) for _ in
              range(self.n_layers)])
-
         self.deconv = nn.ConvTranspose1d(in_channels=self.hidden, out_channels=self.hidden, kernel_size=4, stride=2,
                                          padding=1)
         # self.linear1 = nn.Linear(self.hidden, 128)
@@ -370,7 +362,6 @@ class shared_layer(nn.Module):
         x_token = self.pool(self.conv(sequence.unsqueeze(1))).permute(0, 2, 1)
         embedding = x_token + self.position(sequence)
         x = self.dropout(self.layer_norm(embedding))
-
         mask = None
         for transformer in self.transformer_blocks:
             x = transformer.forward(x, mask)
