@@ -47,7 +47,6 @@ def train(args, export_root=None, logger=None):
 
         for name, param in combined_model.named_parameters():
             logger.info(f"Parameter: {name}, Requires Grad: {param.requires_grad},number of parameters{param.numel()}")
-
     trainer = Trainer_single(args, combined_model, train_loader, val_loader, export_root, channel)
     trainer.train(logger)
 
