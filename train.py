@@ -39,7 +39,6 @@ def train(args, export_root=None, logger=None):
         logger.info('Failed to load old model, continue training new model...')
 
         model = BERT4NILM(args)
-
         new_model1 = CNNNetwork(args)
         new_model2 = CNNNetwork(args)
         new_model3 = CNNNetwork(args)
