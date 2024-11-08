@@ -21,7 +21,6 @@ print('test dataset: ' + test_path)
 dataset = AbstractDataset_appliance(training_path, test_path, para, channel)
 dataloader = NILMDataloader(args, dataset)
 train_loader, test_loader = dataloader.get_dataloaders()
-
 export_root = args.model_path
 
 try:
