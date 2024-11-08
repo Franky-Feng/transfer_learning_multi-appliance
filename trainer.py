@@ -145,7 +145,6 @@ class Trainer(metaclass=ABCMeta):
                 y_pred_binary = (y_pred_status >= threshold).to(torch.int)
                 rel_err, abs_err = relative_absolute_error(y_pred.detach().cpu().numpy().squeeze(),
                                                            labels_energy.detach().cpu().numpy().squeeze())
-
                 relative_errors.append(rel_err.tolist())
                 absolute_errors.append(abs_err.tolist())
                 acc, precision, recall, f1 = acc_precision_recall_f1_score(y_pred_binary.detach(
@@ -154,7 +153,6 @@ class Trainer(metaclass=ABCMeta):
                 precision_values.append(precision.tolist())
                 recall_values.append(recall.tolist())
                 f1_values.append(f1.tolist())
-
                 loss_values.append(total_loss.item())
                 tqdm_dataloader.set_description('Validation, err {:.2f}'.format(total_loss))
         return_rel_err = np.array(loss_values).mean(axis=0)
