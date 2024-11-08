@@ -72,5 +72,4 @@ if __name__ == "__main__":
     # get_user_input(args)
     utils.mkdir("log/" + 'total')
     logger = utils.setup_log('total', args.logname)
-
     train(args, logger=logger)
