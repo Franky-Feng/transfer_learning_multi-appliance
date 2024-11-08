@@ -57,7 +57,6 @@ def fix_random_seed_as(random_seed):
     torch.cuda.manual_seed_all(random_seed)
     np.random.seed(random_seed)
 
-
 torch.set_default_tensor_type(torch.DoubleTensor)
 args = Arguments.args
 
