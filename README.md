@@ -1,4 +1,4 @@
-# Transferability in Multi-Appliance-Task Non-Intrusive Load Monitoring
+# Transfer Learning for Multiappliance-Task Nonintrusive Load Monitoring
 
 This code implements the sequence-to-sequence(seq2seq) learning model. Then, this code not only implements transfer learning for NILM on single appliances but also extends to transfer learning for multiple appliances.
 
@@ -63,3 +63,18 @@ Improvement of multi-appliance model compared with single appliance model.
 ![](plots/f1_plot1.jpg)
 
 
+## Citation
+
+If you find this repo useful for your research, please consider citing our paper:
+```
+@ARTICLE{10885528,
+  author={Sun, Yao and Feng, Jianwei and Yuan, Liang and Su, Mei and Luan, Wenpeng},
+  journal={IEEE Transactions on Instrumentation and Measurement}, 
+  title={Transfer Learning for Multiappliance-Task Nonintrusive Load Monitoring}, 
+  year={2025},
+  volume={74},
+  number={},
+  pages={1-12},
+  keywords={Transfer learning;Feature extraction;Training;Computational modeling;Load modeling;Data models;Attention mechanisms;Accuracy;Neural networks;Load monitoring;Attention mechanism;energy disaggregation;multitask learning;nonintrusive load monitoring (NILM);transfer learning},
+  doi={10.1109/TIM.2025.3541652}}
+```
